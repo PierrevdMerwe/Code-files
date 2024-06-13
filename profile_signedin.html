@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Profile - Spades & Spells</title>
+    <link rel="stylesheet" type="text/css" href="profile_signedin_styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left-nav">
+                <a href="index.html"><img class="logo-icon" src="assets/logo_icon.jpg" alt="Home icon">
+                    <h3>Spades & Spells</h3>
+                </a>
+                <a href="categories_catalogue.html">
+                    <h3>Categories & Catalogue</h3>
+                </a>
+                <a href="contact.html">
+                    <h3>Contact</h3>
+                </a>
+            </div>
+            <div class="search-bar-right-nav">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search">
+                    <label for="search-input">
+                        <img src="assets/search_icon.svg" alt="Search icon">
+                    </label>
+                </div>
+                <div class="right-nav">
+                    <a href="cart.html"><img src="assets/cart_icon.svg" alt="Cart icon"></a>
+                    <a href="profile.html"><img style="width: 50%;" src="assets/profile_icon.svg"
+                            alt="Profile icon"></a>
+                </div>
+            </div>
+        </nav>
+        <div class="divider"></div>
+    </header>
+
+    <section class="main-content">
+        <div class="main">
+            <h1 id="welcome-message"></h1>
+            <button class="signout-button">Sign Out</button>
+                <h2>Order History</h2>
+                <div id="order-history">
+                    <!-- Order history will be populated here by profile_signedin_script.js -->
+                </div>
+        </div>
+    </section>
+
+    <div class="footer-divider"></div>
+    <footer>
+        <div class="footer-left">
+            Stay updated! Subscribe to our newsletter for exclusive game deals!
+        </div>
+        <div class="footer-right">
+            <input type="text" id="email-input" placeholder="Enter your email address">
+            <button id="subscribe-button">Subscribe</button>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            checkSession();
+
+            function checkSession() {
+                $.ajax({
+                    type: 'GET',
+                    url: 'check_session.php',
+                    success: function (response) {
+                        var data = JSON.parse(response);
+                        if (!data.signedIn && window.location.pathname !== '/profile.html') {
+                            window.location.href = "profile.html";  // Redirect to login page if not signed in and not already on the login page
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+    <script src="profile_signedin_script.js"></script>
+</body>
+
+</html>

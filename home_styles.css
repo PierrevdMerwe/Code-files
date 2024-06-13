@@ -1,0 +1,480 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-nav h3,
+.right-nav a {
+    margin-right: 30px;
+    color: white;
+}
+
+.left-nav {
+    display: flex;
+}
+
+.right-nav {
+    display: flex;
+    list-style-type: none;
+    margin-left: 10px;
+    margin-right: 20px !important;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    color: black;
+    margin-top: 0.5rem;
+}
+
+.search-bar-right-nav {
+    display: flex;
+}
+
+.divider {
+    height: 1px;
+    background-color: gray;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.search-container {
+    position: relative;
+    width: 200px;
+    margin-right: 2rem;
+}
+
+#search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30px !important;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.search-container label {
+    position: absolute;
+    left: 10px;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.search-container img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .left-nav,
+    .right-nav {
+        justify-content: center;
+    }
+
+    .search-bar-right-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.left-nav a,
+.right-nav a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+.left-nav img,
+.right-nav img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.logo-icon {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-column {
+    flex: 0 0 70%;
+    max-width: 70%;
+    padding-left: 5rem;
+}
+
+.right-column {
+    flex: 0 0 30%;
+    max-width: 25%;
+}
+
+#quote-container {
+    font-size: 24px;
+    font-style: italic;
+    margin-top: 20px;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.deals-and-picks {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.left-column-deals {
+    color: white;
+    width: 13%;
+}
+
+.right-column-picks {
+    color: white;
+    width: 50%;
+}
+
+.heading-container {
+    background-color: #444;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.deal-box.thin {
+    height: 200px;
+    background-color: #df7e00;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.deal-box,
+.grid-item,
+.genre-box {
+    background-color: #444;
+    border-radius: 10px;
+    height: 400px;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.deal-box:hover,
+.grid-item:hover,
+.genre-box:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.deal-box.thin {
+    height: 200px;
+}
+
+.deal-box.thin:hover {
+    cursor: pointer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.genre-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.genre-column {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.genre-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.genre-title {
+    text-align: center;
+}
+
+.genre-image {
+    width: 85%;
+    height: 205px;
+    padding: 1rem;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+.genre-button {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.genre-button:hover {
+    transform: scale(1.15);
+}
+
+.countdown-digit {
+    background-color: black;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    /* Make text bold */
+    margin: 0 10px;
+}
+
+.latest-posts {
+    background-color: #444;
+    /* Change to match container color */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.post-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+.post-grid-item {
+    background-color: black;
+    border-radius: 10px;
+    height: 400px;
+    width: 60%;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post-grid-item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.post-image {
+    background-color: #555;
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    object-fit: cover;
+}
+
+.post-image img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+
+.post-title {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 10px;
+    padding-left: 1rem;
+}
+
+.post-body {
+    margin-bottom: 20px;
+    padding-left: 1rem;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+
+.author-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    font-size: 36px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #444;
+    color: white;
+    font-weight: bold;
+}
+
+#email-input {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#subscribe-button {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#subscribe-button:hover {
+    transform: scale(1.15);
+}
+
+.footer-divider {
+    height: 3px;
+    background-color: #363636;
+    width: 100%;
+}
+
+a h3:hover {
+    color: #df7e00;
+}
+
+#search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30px !important;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    color: black;
+    margin-top: 0.5rem;
+}
+
+.right-column-picks .grid-item {
+    background-color: #444;
+    border-radius: 10px;
+    height: 400px;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post-price {
+    margin-bottom: 20px;
+    padding-left: 1rem;
+    color: #df7e00;
+    font-weight: bold;
+}
+
+.deal-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deal-title {
+    text-align: center;
+}
+
+.deal-image {
+    width: 90%;
+    height: 250px;
+    padding: 1rem;
+    border-radius: 35px;
+}
+
+.deal-button {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.deal-button:hover {
+    transform: scale(1.15);
+}
+
+.post-price-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buy-now-button {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-left: 8rem;
+}
+
+.buy-now-button:hover {
+    transform: scale(1.15);
+}

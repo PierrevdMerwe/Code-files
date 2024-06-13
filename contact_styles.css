@@ -1,0 +1,206 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-nav h3,
+.right-nav a {
+    margin-right: 30px;
+    color: white;
+}
+
+.left-nav {
+    display: flex;
+}
+
+.right-nav {
+    display: flex;
+    list-style-type: none;
+    margin-left: 10px;
+    margin-right: 20px !important;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    color: black;
+    margin-top: 0.5rem;
+}
+
+.search-bar-right-nav {
+    display: flex;
+}
+
+.divider {
+    height: 1px;
+    background-color: gray;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.search-container {
+    position: relative;
+    width: 200px;
+    margin-right: 2rem;
+}
+
+#search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30px !important;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.search-container label {
+    position: absolute;
+    left: 10px;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.search-container img {
+    width: 20px;
+    height: 20px;
+}
+
+.left-nav a,
+.right-nav a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+.left-nav img,
+.right-nav img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.logo-icon {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    font-size: 36px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #444;
+    color: white;
+    font-weight: bold;
+}
+#email-input {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#subscribe-button {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#subscribe-button:hover {
+    transform: scale(1.15);
+}
+
+.footer-divider {
+    height: 3px;
+    background-color: #363636;
+    width: 100%;
+}
+
+a h3:hover {
+    color: #df7e00;
+}
+
+.contact-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: white;
+}
+
+.contact-info-form {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form button {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.contact-form button {
+    background-color: #df7e00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.contact-form button:hover {
+    transform: scale(1.15);
+}
+
+.google-map {
+    width: 50%;
+    height: calc(100vh - 100px); /* Adjust as needed */
+}

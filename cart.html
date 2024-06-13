@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cart_styles.css">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left-nav">
+                <a href="index.html"><img class="logo-icon" src="assets/logo_icon.jpg" alt="Home icon">
+                    <h3>Spades & Spells</h3>
+                </a>
+                <a href="categories_catalogue.html">
+                    <h3>Categories & Catalogue</h3>
+                </a>
+                <a href="contact.html">
+                    <h3>Contact</h3>
+                </a>
+            </div>
+            <div class="search-bar-right-nav">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search">
+                    <label for="search-input">
+                        <img src="assets/search_icon.svg" alt="Search icon">
+                    </label>
+                </div>
+                <div class="right-nav">
+                    <a href="cart.html"><img src="assets/cart_icon.svg" alt="Cart icon"></a>
+                    <a href="profile.html"><img style="width: 50%;" src="assets/profile_icon.svg"
+                            alt="Profile icon"></a>
+                </div>
+            </div>
+        </nav>
+        <div class="divider"></div>
+    </header>
+    <div class="content">
+        <section class="left-section">
+            <h2>My Shopping Cart</h2>
+            <div id="cart-items"></div>
+        </section>
+        <section class="right-section">
+            <h2>My Order</h2>
+            <div id="order-items"></div>
+            <div class="divider"></div>
+            <div id="discount-section">
+                <input type="text" id="discount-code" placeholder="Discount code">
+                <button id="apply-discount">Apply</button>
+            </div>
+            <div class="divider"></div>
+            <h3 style="font-size: 30px;">Total: <span id="total-price"></span></h3>
+            <button id="proceed-checkout">Proceed to Checkout</button>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-left">
+            Stay updated! Subscribe to our newsletter for exclusive game deals!
+        </div>
+        <div class="footer-right">
+            <input type="text" id="email-input" placeholder="Enter your email address">
+            <button id="subscribe-button">Subscribe</button>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="cart_script.js"></script>
+</body>
+</html>

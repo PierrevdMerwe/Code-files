@@ -1,0 +1,322 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    padding: 20px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.left-nav h3,
+.right-nav a {
+    margin-right: 30px;
+    color: white;
+}
+
+.left-nav {
+    display: flex;
+}
+
+.right-nav {
+    display: flex;
+    list-style-type: none;
+    margin-left: 10px;
+    margin-right: 20px !important;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    color: black;
+    margin-top: 0.5rem;
+}
+
+.search-bar-right-nav {
+    display: flex;
+}
+
+.divider {
+    height: 1px;
+    background-color: gray;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.search-container {
+    position: relative;
+    width: 200px;
+    margin-right: 2rem;
+}
+
+#search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30px !important;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.search-container label {
+    position: absolute;
+    left: 10px;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.search-container img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .left-nav,
+    .right-nav {
+        justify-content: center;
+    }
+
+    .search-bar-right-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.left-nav a,
+.right-nav a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+}
+
+.left-nav img,
+.right-nav img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+.logo-icon {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    font-size: 36px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #444;
+    color: white;
+    font-weight: bold;
+}
+
+#email-input {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#subscribe-button {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#subscribe-button:hover {
+    transform: scale(1.15);
+}
+
+.footer-divider {
+    height: 3px;
+    background-color: #363636;
+    width: 100%;
+}
+
+a h3:hover {
+    color: #df7e00;
+}
+
+#search-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 30px !important;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    color: black;
+    margin-top: 0.5rem;
+}
+
+/* CSS styles for the left and right sections */
+.left-section {
+    width: 45%;
+    float: left;
+    padding: 25px;
+}
+
+.right-section {
+    width: 45%;
+    float: left;
+    padding: 25px;
+}
+
+/* CSS styles for the order items */
+#order-items {
+    margin-bottom: 20px;
+}
+
+/* CSS styles for the discount input and apply button */
+#discount-code {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#apply-discount {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#apply-discount:hover {
+    transform: scale(1.1);
+}
+
+/* CSS styles for the total */
+.total {
+    text-align: right;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Additional styles for cart items */
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 20px;
+}
+
+.cart-item img {
+    width: 15%;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 25px;
+}
+
+.product-details {
+    flex-grow: 1;
+}
+
+.item-actions {
+    text-align: right;
+}
+
+.item-actions button {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.item-actions .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.item-actions .quantity input {
+    width: 50px;
+    margin-left: 10px;
+}
+
+/* Styles for dividers in the right section */
+.right-section .divider {
+    height: 1px;
+    background-color: gray;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* Styles for the proceed to checkout button */
+#proceed-checkout {
+    background-color: #df7e00;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#proceed-checkout:hover {
+    transform: scale(1.02);
+}
+
+span#total-price {
+    float: right;
+}
