@@ -264,23 +264,23 @@ img {
 
 .genre-box {
     font-weight: bold;
-    padding: 10px 20px; /* Add some padding */
-    margin-right: 10px; /* Add some margin */
-    background-color: #df7e00; /* Change the background color */
-    color: white; /* Text color */
-    border-radius: 50px; /* Make the genres pill-shaped */
-    cursor: pointer; /* Change cursor on hover */
+    padding: 10px 20px; 
+    margin-right: 10px; 
+    background-color: #df7e00; 
+    color: white; 
+    border-radius: 50px; 
+    cursor: pointer; 
     transition: transform 0.3s ease-in-out;
 }
 
 .genre-box:hover {
     font-weight: bold;
-    padding: 10px 20px; /* Add some padding */
-    margin-right: 10px; /* Add some margin */
-    background-color: white; /* Change the background color */
-    color: #df7e00; /* Text color */
-    border-radius: 50px; /* Make the genres pill-shaped */
-    cursor: pointer; /* Change cursor on hover */
+    padding: 10px 20px; 
+    margin-right: 10px; 
+    background-color: white; 
+    color: #df7e00; 
+    border-radius: 50px; 
+    cursor: pointer; 
     transform: scale(1.05);
     cursor: pointer;
 }

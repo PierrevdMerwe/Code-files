@@ -28,14 +28,21 @@ try {
     }
 
     if (isset($_SESSION['username'])) {
-        $username = $_SESSION['username'];
+        $session_username = $_SESSION['username'];
+        error_log("Session username: $session_username");
 
         // Fetch user details
         $sql = "SELECT user_id FROM Users WHERE username = ?";
         $stmt = $conn_users->prepare($sql);
-        $stmt->bind_param("s", $username);
+        if ($stmt === false) {
+            throw new Exception("Prepare statement failed: " . $conn_users->error);
+        }
+        $stmt->bind_param("s", $session_username);
         $stmt->execute();
         $result = $stmt->get_result();
+        if ($result === false) {
+            throw new Exception("Execute failed: " . $stmt->error);
+        }
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
@@ -67,19 +74,25 @@ try {
             $conn_users->begin_transaction();
             $conn_products->begin_transaction();
 
-            // Insert new order into Orders table
-            $sql = "INSERT INTO Orders (user_id, date_ordered, status) VALUES (?, NOW(), 'pending')";
+            // Fetch the latest order_id and increment it
+            $sql = "SELECT MAX(order_id) AS max_order_id FROM Orders";
             $stmt = $conn_users->prepare($sql);
-            $stmt->bind_param("i", $user_id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+            $new_order_id = $row['max_order_id'] + 1;
+
+            // Insert new order into Orders table with the new order_id
+            $sql = "INSERT INTO Orders (order_id, user_id, date_ordered, status) VALUES (?, ?, NOW(), 'pending')";
+            $stmt = $conn_users->prepare($sql);
+            $stmt->bind_param("ii", $new_order_id, $user_id);
             $stmt->execute();
             if ($stmt->affected_rows > 0) {
-                $order_id = $stmt->insert_id;
-
                 // Insert each cart item into Order_Details table
                 foreach ($cart_items as $item) {
                     $sql = "INSERT INTO Order_Details (order_id, product_id, quantity) VALUES (?, ?, ?)";
                     $stmt = $conn_users->prepare($sql);
-                    $stmt->bind_param("iii", $order_id, $item['product_id'], $item['quantity']);
+                    $stmt->bind_param("iii", $new_order_id, $item['product_id'], $item['quantity']);
                     $stmt->execute();
                     if ($stmt->affected_rows <= 0) {
                         throw new Exception("Failed to insert order details");
@@ -104,7 +117,7 @@ try {
                 throw new Exception("Failed to create order");
             }
         } else {
-            throw new Exception("No user found with the username: " . $username);
+            throw new Exception("No user found with the username: " . $session_username);
         }
     } else {
         throw new Exception("No user is signed in");
